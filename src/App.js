@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-
-import data from "./data";
-import Question from "./Question";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import {
+  About,
+  Contact,
+  Navbar,
+  Projects,
+  Skills,
+  Home,
+  Footer,
+} from "./component/components";
 
 function App() {
-  const [question, setQuestion] = useState(data);
-
   return (
-    <main>
-      <div className="container">
-        <h3> React FAQ</h3>
-        {/* iterate over the data */}
-        <section className="info">
-          {question.map((question) => {
-            return <Question key={question.id} {...question} />;
-          })}
-        </section>
-      </div>
-    </main>
+    <div>
+      <Navbar />
+      <Home />
+      <About />
+      <Skills />
+      <Projects />
+      <ToastContainer />
+      <Contact />
+
+      <Footer />
+    </div>
   );
 }
 
